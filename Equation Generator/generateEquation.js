@@ -33,10 +33,9 @@ console.log(`Equation for ${inputNumber}: ${equation}`);
 //Generate Equations for 1 to 90 Numbers
 function generateEquationsObject() {
   const result = {};
-  for (let i = 1; i <= 90; i++) {
-    result[i] = generateEquation(i);
-  }
-
+  Array.from({ length: 90 }).forEach((_, i) => {
+    result[i+1] = generateEquation(i+1);
+  });
   return result;
 }
 
